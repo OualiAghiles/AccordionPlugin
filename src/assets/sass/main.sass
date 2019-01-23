@@ -1,13 +1,11 @@
 @import bulma
-
-.js-is-completed
-  text-decoration: line-through
-  color: #f0f000 !important
-  &:hover
-    background: lightBlue !important
-.js-todos
-  .panel-block
-    display: flex
-    justify-content: space-between
-    .js-txt-todo
-      flex: 1
+.panel
+  &:not(:last-child)
+    margin-bottom: -1px
+  .panel-heading
+    border-radius: 0
+    cursor: pointer
+  .js-accordion-body
+    display: none
+    &.is-active
+      display: block
