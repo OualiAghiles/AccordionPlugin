@@ -12,15 +12,18 @@ class Accordion {
       // vars
       let parent = element.parentNode
       let currentActive = parent.querySelector('.js-accordion-child.is-active')
+
       let target = element
       let targetChild = target.querySelector('.js-accordion-body')
+      let targeticon = target.querySelector('.js-icon .material-icons')
 
       // if content visible
       if (currentActive && !target.classList.contains('is-active')) {
         let currentActiveChild = currentActive.querySelector('.js-accordion-body')
-
+        let currentIcon = currentActive.querySelector('.js-icon .material-icons')
         // hide visible
         this.slideUp(currentActiveChild)
+        currentIcon.innerText = 'add_box'
         currentActive.classList.remove('is-active')
         currentActiveChild.classList.remove('is-active')
 
@@ -28,6 +31,7 @@ class Accordion {
         this.slideDown(targetChild)
         targetChild.classList.add('is-active')
         target.classList.add('is-active')
+        targeticon.innerText = 'indeterminate_check_box'
 
       } else {
 
@@ -35,11 +39,14 @@ class Accordion {
           this.slideDown(targetChild)
           targetChild.classList.add('is-active')
           target.classList.add('is-active')
+          targeticon.innerText = 'indeterminate_check_box'
+
 
         } else {
           this.slideUp(targetChild)
           targetChild.classList.remove('is-active')
           target.classList.remove('is-active')
+          targeticon.innerText = 'add_box'
         }
       }
     })
