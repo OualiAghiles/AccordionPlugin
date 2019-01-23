@@ -5,6 +5,14 @@
   .panel-heading
     border-radius: 0
     cursor: pointer
+    &:hover
+      color: hsl(217, 71%, 53%)
+      border-color: hsl(217, 71%, 53%)
+  &.is-active
+    .panel-heading
+      color: hsl(217, 71%, 53%)
+      border-color: hsl(217, 71%, 53%)
+
   .js-accordion-body
     display: none
     &.is-active

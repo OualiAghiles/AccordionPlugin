@@ -7,22 +7,41 @@ class Accordion {
     })
   }
 
-  handleEvents(item) {
-    item.addEventListener('click', () => {
-      let currentActive = item.parentNode.querySelector('.is-active')
-      let target = item.querySelector('.js-accordion-body')
-      if (currentActive && !target.classList.contains('is-active')) {
-        this.slideUp(currentActive)
-        currentActive.classList.remove('is-active')
-      }
-      if (!target.classList.contains('is-active')) {
-        this.slideDown(target)
-        target.classList.add('is-active')
-      } else {
-        this.slideUp(target)
-        target.classList.remove('is-active')
-      }
+  handleEvents(element) {
+    element.addEventListener('click', () => {
+      // vars
+      let parent = element.parentNode
+      let currentActive = parent.querySelector('.js-accordion-child.is-active')
+      let target = element
+      let targetChild = target.querySelector('.js-accordion-body')
 
+      // if content visible
+      if (currentActive && !target.classList.contains('is-active')) {
+        let currentActiveChild = currentActive.querySelector('.js-accordion-body')
+
+        // hide visible
+        this.slideUp(currentActiveChild)
+        currentActive.classList.remove('is-active')
+        currentActiveChild.classList.remove('is-active')
+
+        //show target
+        this.slideDown(targetChild)
+        targetChild.classList.add('is-active')
+        target.classList.add('is-active')
+
+      } else {
+
+        if (!target.classList.contains('is-active')) {
+          this.slideDown(targetChild)
+          targetChild.classList.add('is-active')
+          target.classList.add('is-active')
+
+        } else {
+          this.slideUp(targetChild)
+          targetChild.classList.remove('is-active')
+          target.classList.remove('is-active')
+        }
+      }
     })
   }
 
