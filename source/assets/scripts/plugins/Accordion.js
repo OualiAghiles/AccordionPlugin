@@ -14,7 +14,7 @@ class Accordion {
     ]
    * @memberof Accordion
    */
-  constructor(className, options = {}) {
+  constructor (className, options = {}) {
     this.options = Object.assign({}, {
       oneVisible: true,
       closeAllAtStart: false,
@@ -29,7 +29,7 @@ class Accordion {
    * @exemple this.init()
    * @memberof Accordion
    */
-  init() {
+  init () {
     const headers = this.els.querySelectorAll('.js-toggler')
     headers.forEach(h => {
       const parent = h.parentElement
@@ -61,7 +61,7 @@ class Accordion {
    * @param {*} el
    * @memberof Accordion
    */
-  hide(parent, el) {
+  hide (parent, el) {
     const height = el.offsetHeight
     el.style.height = height + 'px'
     el.offsetHeight
@@ -77,7 +77,7 @@ class Accordion {
    * @param {*} el
    * @memberof Accordion
    */
-  show(parent, el) {
+  show (parent, el) {
     el.style.height = ''
     const height = el.offsetHeight
     el.style.height = '0'
@@ -93,7 +93,7 @@ class Accordion {
    * @param {*} header
    * @memberof Accordion
    */
-  rotateIconActive(header) {
+  rotateIconActive (header) {
     const icon = header.querySelector('.js-icon')
     const svg = icon.querySelector('svg')
     const title = header.querySelector('span')
@@ -110,7 +110,7 @@ class Accordion {
    * @param {*} header
    * @memberof Accordion
    */
-  rotateIconClose(header) {
+  rotateIconClose (header) {
     const icon = header.querySelector('.js-icon')
     const svg = icon.querySelector('svg')
     const title = header.querySelector('span')
@@ -127,7 +127,7 @@ class Accordion {
    * @param {HTMLElement} h - header(element clicked)
    * @memberof Accordion
    */
-  toggle(h) {
+  toggle (h) {
     const parent = h.parentElement
     const content = h.nextElementSibling
     if (parent.classList.contains('active')) {

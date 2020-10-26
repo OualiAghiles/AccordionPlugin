@@ -83,9 +83,7 @@ Structure on source file
 
 
 ### Add link to the files
-Add the offcanvas plugin js to the html file
-
-Add the offcanvas plugin css to the html file
+Add the accordion plugin js to the html file
 
 ```html
 <!DOCTYPE html>
