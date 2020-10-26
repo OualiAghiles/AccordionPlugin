@@ -1,5 +1,5 @@
-ToDOList-js
-# LightBox responsive
+
+# Accordion plugin
 
 > This plugin made with 
 >    * Vanilla JavaScript
